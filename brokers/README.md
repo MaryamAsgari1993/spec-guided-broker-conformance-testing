@@ -1,25 +1,45 @@
-# Brokers under test
+# Phase 1 — Brokers and replay
 
-The ICTSS experiments treat each broker as a black box. Versions match Section 4.1 of the paper.
+[Broad overview → `../README.md`](../README.md)
 
-| Broker | Version | Docker image | Host port |
-|--------|---------|--------------|-----------|
-| EMQX | 4.4.19 | `emqx/emqx:4.4.19` | 1883 |
-| NanoMQ | 0.22.4 | `emqx/nanomq:0.22.4` | 1884 |
+Deploy the two brokers under test and replay the **same** specification-derived clients from the QRS artifact. Do not retrain the oracle here.
 
-The oracle itself was trained on Mosquitto 2.0.22 in the companion QRS repository; that broker is **not** re-deployed here.
+---
 
-## Start
+## Layout
+
+| Path | Role |
+|------|------|
+| `docker-compose.yml` | EMQX **4.4.19** (host port **1883**) and NanoMQ **0.22.4** (host port **1884**). |
+
+Generators, `statements.json`, and `pcapToCsv.py` live in the QRS repository:
+
+https://github.com/MaryamAsgari1993/spec-guided-mqtt-conformance-validation
+
+Use `mqtt-conformance-dataset/` (compliant + **client-side** single-rule mutants) and `PCAP/pcapToCsv.py`.
+
+---
+
+## Requirements
+
+- **Docker**
+- From QRS: **JDK 21**, **Gradle**, an MQTT v5 client host, **tcpdump**, **tshark**
+
+---
+
+## Installation (brokers)
 
 ```bash
 docker compose -f brokers/docker-compose.yml up -d
 docker compose -f brokers/docker-compose.yml ps
 ```
 
-MQTT v5 must be enabled (the default in both images). Replay clients from [replay/README.md](../replay/README.md) against `127.0.0.1:1883` (EMQX) or `127.0.0.1:1884` (NanoMQ).
+---
 
-## Stop
+## Run — replay
 
-```bash
-docker compose -f brokers/docker-compose.yml down
-```
+1. Build the QRS generators (`mqtt-conformance-dataset/`).
+2. Point each generator at `127.0.0.1:1883` (EMQX) or `127.0.0.1:1884` (NanoMQ).
+3. Capture with `tcpdump`, convert with QRS `PCAP/pcapToCsv.py`.
+
+Paper traces are already in [`../traces/`](../traces/README.md).

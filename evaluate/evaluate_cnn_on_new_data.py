@@ -84,12 +84,12 @@ BEST_HYPERPARAMETERS = {
 # File paths
 # NOTE: Edit paths below to point to your files
 CONFIG = {
-    'pretrained_model_path': '../oracle/best_cnn_binary_model.pth',
-    'train_data_file': '../traces/mosquitto/mqtt_preprocessed_v2.csv',
+    'pretrained_model_path': 'best_cnn_binary_model.pth',
+    'train_data_file': 'mqtt_preprocessed_v2.csv',
     'test_data_file': '../traces/emqx/EMQX_preprocessed.csv',
-    'model_save_path': '../oracle/best_cnn_binary_model.pth',
-    'results_save_path': '../results/tables/evaluation_results_new_server.json',
-    'confusion_matrix_save_path': '../results/heatmaps/confusion_matrix_new_server.png'
+    'model_save_path': 'best_cnn_binary_model.pth',
+    'results_save_path': 'Result/evaluation_results_binary.json',
+    'confusion_matrix_save_path': 'Result/confusion_matrix_binary.png'
 }
 
 # Feature columns (same as in train_cnn_binary_model.py)

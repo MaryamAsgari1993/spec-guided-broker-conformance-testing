@@ -44,7 +44,7 @@ COLUMNS_TO_KEEP = [
 CONFIG_V2 = {
     'input_file': '../traces/nanomq/Final-NanSET.csv',
     'output_file': '../traces/nanomq/Final-NanSET_preprocessed.csv',
-    'metadata_file': '../traces/nanomq/preprocessing_metadata_nano.json',
+    'metadata_file': '../traces/nanomq/preprocessing_metadata.json',
     'random_seed': 42,
     'version': '2.0'
 }

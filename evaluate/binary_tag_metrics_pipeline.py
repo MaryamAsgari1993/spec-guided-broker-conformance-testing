@@ -218,9 +218,13 @@ class BinaryTagMetricsPipeline:
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Binary tag-aware metrics pipeline.")
-    parser.add_argument("--train-data", default="../traces/mosquitto/mqtt_preprocessed_v2.csv")
+    parser.add_argument(
+        "--train-data",
+        required=True,
+        help="QRS Mosquitto CSV (Sequence Learning/mqtt_preprocessed_v2.csv) used to fit the scaler.",
+    )
     parser.add_argument("--test-data", required=True)
-    parser.add_argument("--pretrained-model", default="../oracle/best_cnn_binary_model.pth")
+    parser.add_argument("--pretrained-model", default="best_cnn_binary_model.pth")
     parser.add_argument("--output-prefix", default=None, help="Prefix for output files.")
     parser.add_argument(
         "--subset-tags",
