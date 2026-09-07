@@ -22,14 +22,3 @@ The repository is organized in three parts: **replay → traces → oracle infer
 
 ---
 
-## High-level results
-
-Binary conformance on the client-side rule subset (no retraining):
-
-| Broker | Accuracy | Precision | Recall | F1-score |
-|--------|----------|-----------|--------|----------|
-| Mosquitto (reference) | 99.87 | 99.90 | 99.73 | 99.82 |
-| EMQX 4.4.19 | 97.58 | 99.88 | 93.22 | 96.44 |
-| NanoMQ 0.22.4 | 99.06 | 100.0 | 97.33 | 98.65 |
-
-Multi-class rule identification remains strong on Mosquitto and degrades on the unseen brokers (EMQX Macro-F1 67.67, NanoMQ 75.42), which we use to prioritize trace-level comparison. Summary JSON files are under [`evaluate/Result/`](evaluate/Result/).
