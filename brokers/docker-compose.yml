@@ -1,0 +1,24 @@
+# MQTT v5 brokers evaluated in the ICTSS paper.
+# Start from the repository root:
+#   docker compose -f brokers/docker-compose.yml up -d
+#
+# EMQX listens on host port 1883; NanoMQ on host port 1884.
+
+services:
+  emqx:
+    image: emqx/emqx:4.4.19
+    container_name: ictss-emqx
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "18083:18083"
+    environment:
+      EMQX_NAME: emqx
+      EMQX_LOADED_PLUGINS: "emqx_management,emqx_recon,emqx_retainer,emqx_dashboard"
+
+  nanomq:
+    image: emqx/nanomq:0.22.4
+    container_name: ictss-nanomq
+    restart: unless-stopped
+    ports:
+      - "1884:1883"

@@ -1,0 +1,125 @@
+{
+  "binary": {
+    "CNN": {
+      "model_type": "CNN",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 5
+      },
+      "filters": [
+        64,
+        128,
+        256
+      ],
+      "filters_distribution": {
+        "(64, 128, 256)": 4,
+        "(64, 128)": 1
+      },
+      "kernel_size": 3,
+      "pooling_type": "max",
+      "pooling_type_distribution": {
+        "max": 5
+      }
+    },
+    "LSTM": {
+      "model_type": "LSTM",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 3,
+        "50": 2
+      },
+      "hidden_size": 256,
+      "hidden_size_distribution": {
+        "64": 1,
+        "256": 2,
+        "128": 2
+      }
+    },
+    "GRU": {
+      "model_type": "GRU",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 5
+      },
+      "hidden_size": 256,
+      "hidden_size_distribution": {
+        "256": 4,
+        "128": 1
+      }
+    },
+    "Transformer": {
+      "model_type": "Transformer",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 4,
+        "50": 1
+      },
+      "d_model": 256,
+      "d_model_distribution": {
+        "256": 3,
+        "128": 2
+      },
+      "nhead": 8
+    }
+  },
+  "multiclass": {
+    "CNN": {
+      "model_type": "CNN",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 5
+      },
+      "filters": [
+        64,
+        128,
+        256
+      ],
+      "filters_distribution": {
+        "(64, 128, 256)": 5
+      },
+      "kernel_size": 3,
+      "pooling_type": "max",
+      "pooling_type_distribution": {
+        "max": 5
+      }
+    },
+    "LSTM": {
+      "model_type": "LSTM",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 5
+      },
+      "hidden_size": 256,
+      "hidden_size_distribution": {
+        "256": 4,
+        "128": 1
+      }
+    },
+    "GRU": {
+      "model_type": "GRU",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 5
+      },
+      "hidden_size": 64,
+      "hidden_size_distribution": {
+        "128": 1,
+        "64": 4
+      }
+    },
+    "Transformer": {
+      "model_type": "Transformer",
+      "sequence_length": 100,
+      "sequence_length_distribution": {
+        "100": 4,
+        "50": 1
+      },
+      "d_model": 256,
+      "d_model_distribution": {
+        "128": 2,
+        "256": 3
+      },
+      "nhead": 8
+    }
+  }
+}
