@@ -2,7 +2,7 @@
 
 [Broad overview → `../README.md`](../README.md)
 
-Reconstructed MQTT v5.0 sessions captured against the unseen brokers. Labels (`Target`, `Tag`) come from the QRS adapters.
+Reconstructed MQTT v5.0 sessions captured against the unseen brokers. Labels (`Target`, `Tag`) come from the adapters in the QRS 2026 paper.
 
 ---
 
@@ -15,10 +15,10 @@ Reconstructed MQTT v5.0 sessions captured against the unseen brokers. Labels (`T
 | `nanomq/Final-NanSET.csv` | NanoMQ 0.22.4 | Reconstructed packets. |
 | `nanomq/Final-NanSET_preprocessed.csv` | NanoMQ 0.22.4 | Session table after the same preprocessor. |
 
-Mosquitto training/reference traces stay in the QRS repository (`Sequence Learning/mqtt_preprocessed_v2.csv`).
+Mosquitto training/reference traces stay in the QRS 2026 artifact (`Sequence Learning/mqtt_preprocessed_v2.csv`).
 
 ---
 
 ## Note
 
-`evaluate/` consumes the **preprocessed** CSVs. Raw reconstruction uses QRS `PCAP/pcapToCsv.py`.
+`evaluate/` consumes the **preprocessed** CSVs. Raw reconstruction uses `PCAP/pcapToCsv.py` from the QRS 2026 artifact.
