@@ -12,7 +12,7 @@ Deploy the two brokers under test and replay the **same** specification-derived 
 |------|------|
 | `docker-compose.yml` | EMQX **4.4.19** (host port **1883**) and NanoMQ **0.22.4** (host port **1884**). |
 
-Generators, `statements.json`, and `pcapToCsv.py` are part of the QRS 2026 oracle artifact:
+Generators, and `pcapToCsv.py` are part of the QRS 2026 oracle artifact:
 
 https://github.com/MaryamAsgari1993/spec-guided-mqtt-conformance-validation
 
